@@ -358,7 +358,6 @@ export default {
           getCellClass={this.getCellClass}
           handleCellMouseEnter={this.handleCellMouseEnter}
           handleCellMouseLeave={this.handleCellMouseLeave}
-          isSelected={this.store.isSelected(row)}
           isExpanded={this.store.states.expandRows.indexOf(row) > -1}
           fixed={this.fixed}
         >

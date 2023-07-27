@@ -35,13 +35,8 @@ export const cellForced = {
         on-input={ this.toggleAllSelection }
         value={ this.isAllSelected } />;
     },
-    renderCell: function(h, { row, column, isSelected, store, $index }) {
-      return <el-checkbox
-        nativeOn-click={ (event) => event.stopPropagation() }
-        value={ isSelected }
-        disabled={ column.selectable ? !column.selectable.call(null, row, $index) : false }
-        on-input={ () => { store.commit('rowSelectedChanged', row); } }
-      />;
+    renderCell: function(h, { row, column, store, $index }) {
+      return <el-table-checkbox row={row} column={column} store={store} $index={$index} />;
     },
     sortable: false,
     resizable: false

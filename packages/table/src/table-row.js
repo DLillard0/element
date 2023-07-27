@@ -1,11 +1,11 @@
 import ElCheckbox from 'element-ui/packages/checkbox';
+import ElTableCheckbox from './table-checkbox';
 export default {
   name: 'ElTableRow',
   props: [
     'columns',
     'row',
     'index',
-    'isSelected',
     'isExpanded',
     'store',
     'context',
@@ -22,7 +22,8 @@ export default {
     'fixed'
   ],
   components: {
-    ElCheckbox
+    ElCheckbox,
+    ElTableCheckbox
   },
   render() {
     const {
@@ -35,7 +36,6 @@ export default {
       treeRowData,
       treeIndent,
       columnsHidden = [],
-      isSelected,
       isExpanded
     } = this;
 
@@ -51,7 +51,6 @@ export default {
             columnData.realWidth = this.getColspanRealWidth(columns, colspan, cellIndex);
             const data = {
               store,
-              isSelected,
               isExpanded,
               _self: context,
               column: columnData,
